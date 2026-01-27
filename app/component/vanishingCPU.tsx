@@ -208,6 +208,7 @@ function minimaxMove(
   let bestScore = -Infinity;
   let bestMove = 0;
 
+  const MAX_DEPTH = 6;
   for (let i = 0; i < 9; i++) {
     if (board[i]) continue;
 
@@ -220,7 +221,7 @@ function minimaxMove(
 
     b[i] = 'O';
 
-    const score = minimax(b, oq, xQueue, false);
+    const score = minimax(b, oq, xQueue, false,MAX_DEPTH - 1);
 
     if (score > bestScore) {
       bestScore = score;
@@ -235,12 +236,15 @@ function minimax(
   board: Player[],
   oQueue: number[],
   xQueue: number[],
-  isMax: boolean
+  isMax: boolean,
+  depth: number
 ): number {
   const winner = calculateWinner(board);
-  if (winner === 'O') return 10;
-  if (winner === 'X') return -10;
+  if (winner === 'O') return 10 + depth;
+  if (winner === 'X') return -10 - depth;
 
+  if (depth === 0) return 0;
+  
   const empty = board
     .map((v, i) => (v ? null : i))
     .filter(v => v !== null) as number[];
@@ -256,7 +260,7 @@ function minimax(
       if (oq.length > 3) b[oq.shift()!] = null;
       b[i] = 'O';
 
-      best = Math.max(best, minimax(b, oq, xQueue, false));
+      best = Math.max(best, minimax(b, oq, xQueue, false,depth - 1));
     }
     return best;
   } else {
@@ -268,7 +272,7 @@ function minimax(
       if (xq.length > 3) b[xq.shift()!] = null;
       b[i] = 'X';
 
-      best = Math.min(best, minimax(b, oQueue, xq, true));
+      best = Math.min(best, minimax(b, oQueue, xq, true,depth - 1));
     }
     return best;
   }
