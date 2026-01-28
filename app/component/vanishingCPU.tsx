@@ -151,8 +151,9 @@ export default function Page() {
           ? 'あなたの番(X)'
           : 'CPU思考中…'}
       </div>
-
-      <button onClick={reset} className="px-6 py-2 bg-black text-white rounded-lg">リセット</button>
+        <button onClick={reset} className="px-6 py-2 bg-black text-white rounded-lg">
+          リセット
+        </button>
     </div>
   );
 }
