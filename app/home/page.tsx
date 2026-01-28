@@ -12,7 +12,7 @@ export default function Home(){
                 <a href="/selectVanish">消える三目並べ</a>
               </Button>
               <Button>
-                <a href="/selectLevelTic">テスト</a>
+                <a href="/test">テスト</a>
               </Button>
             </div>
         </div>

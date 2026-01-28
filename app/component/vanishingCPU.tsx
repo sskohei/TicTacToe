@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLevelStore } from '@/stores/levelStores';
 
 type Player = 'X' | 'O' | null;
 type Difficulty = 'easy' | 'normal' | 'hard';
@@ -10,7 +11,9 @@ export default function Page() {
   const [xQueue, setXQueue] = useState<number[]>([]);
   const [oQueue, setOQueue] = useState<number[]>([]);
   const [isXNext, setIsXNext] = useState(true);
-  const [difficulty, setDifficulty] = useState<Difficulty>('easy');
+  //const [difficulty, setDifficulty] = useState<Difficulty>('easy');
+
+  const difficulty = useLevelStore((state) => state.level)
 
   const winner = calculateWinner(board);
    // 🔴 消える予定のマス
@@ -114,17 +117,7 @@ export default function Page() {
       <h1 className="text-3xl font-bold">消える三目並べ</h1>
 
       {/* 難易度 */}
-      <div className="flex gap-2">
-        {(['easy', 'normal', 'hard'] as Difficulty[]).map(d => (
-          <button
-            key={d}
-            onClick={() => setDifficulty(d)}
-            className={`px-4 py-1 rounded ${difficulty === d ? "bg-black text-white" : "border"}`}
-          >
-            {d.toUpperCase()}
-          </button>
-        ))}
-      </div>
+      
 
       {/* 盤面 */}
       <div
