@@ -9,7 +9,6 @@ import { useLevelStore } from "@/stores/levelStores";
 const HUMAN = "X";
 const CPU = "O";
 
-type Difficulty = "easy" | "normal" | "hard";
 
 export default function TicTacToe() {
   const [board, setBoard] = useState<("X" | "O" | null)[]>(Array(9).fill(null));
