@@ -21,9 +21,6 @@ export default function SelectLevelTic(){
               <Button onClick={() => changeDifficulty('hard')}>
                 <Link href="/tictactoeCPU">Hard</Link>
               </Button>
-              <Button onClick={() => console.log(difficulty)}>
-                テスト
-              </Button>
             </div>
         </div>
     )

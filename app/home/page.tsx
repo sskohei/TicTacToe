@@ -11,9 +11,6 @@ export default function Home(){
               <Button>
                 <a href="/selectVanish">消える三目並べ</a>
               </Button>
-              <Button>
-                <a href="/test">テスト</a>
-              </Button>
             </div>
         </div>
     )
