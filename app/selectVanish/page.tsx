@@ -6,7 +6,7 @@ export default function Home(){
             <h1 className="text-3xl font-bold">モードを選択</h1>
             <div className="flex gap-2">
               <Button>
-                <a href="/vanishingCPU">一人用</a>
+                <a href="/selectLevelVanishing">一人用</a>
               </Button>
               <Button>
                 <a href="/vanishing">二人用</a>
