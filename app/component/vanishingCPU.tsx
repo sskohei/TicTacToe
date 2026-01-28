@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useLevelStore } from '@/stores/levelStores';
 
 type Player = 'X' | 'O' | null;
-type Difficulty = 'easy' | 'normal' | 'hard';
 
 export default function Page() {
   const [board, setBoard] = useState<Player[]>(Array(9).fill(null));
