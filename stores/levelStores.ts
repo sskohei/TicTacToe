@@ -1,14 +1,13 @@
 import { create } from "zustand";
 
-type Difficulty = {
-    level:string;
-}
+type Difficulty = "easy" | "normal" | "hard";
 
 type Action = {
-    changeDifficulty:(by:string) => void;
+  level: Difficulty;
+  changeDifficulty: (by: Difficulty) => void;
 };
 
-export const useLevelStore = create<Difficulty & Action>()((set) => ({
-    level:'easy',
-    changeDifficulty:(by) => set((state) => ({level:by})),
+export const useLevelStore = create<Action>()((set) => ({
+  level: "easy",
+  changeDifficulty: (level) => set({ level }),
 }));

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLevelStore } from "@/stores/levelStores";
 
 // ============================
 // 難易度付き CPU 三目並べ
@@ -13,9 +14,12 @@ type Difficulty = "easy" | "normal" | "hard";
 export default function TicTacToe() {
   const [board, setBoard] = useState<("X" | "O" | null)[]>(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-  const [difficulty, setDifficulty] = useState<Difficulty>("easy");
+  //const [difficulty, setDifficulty] = useState<Difficulty>("easy");
 
   const winner = calculateWinner(board);
+
+  const difficulty = useLevelStore((state) => state.level);
+  const changeDifficulty = useLevelStore((state) => state.changeDifficulty);
 
   // ============================
   // プレイヤーの操作
@@ -69,6 +73,8 @@ export default function TicTacToe() {
   function resetGame() {
     setBoard(Array(9).fill(null));
     setIsXNext(true);
+    /*テスト用 */
+    console.log(difficulty)
   }
 
   return (
@@ -76,26 +82,7 @@ export default function TicTacToe() {
       <h1 className="text-3xl font-bold">三目並べ（難易度選択）</h1>
 
       {/* 難易度選択 */}
-      <div className="flex gap-2">
-        <button
-          onClick={() => setDifficulty("easy")}
-          className={`px-4 py-1 rounded ${difficulty === "easy" ? "bg-black text-white" : "border"}`}
-        >
-          Easy
-        </button>
-        <button
-          onClick={() => setDifficulty("normal")}
-          className={`px-4 py-1 rounded ${difficulty === "normal" ? "bg-black text-white" : "border"}`}
-        >
-          Normal
-        </button>
-        <button
-          onClick={() => setDifficulty("hard")}
-          className={`px-4 py-1 rounded ${difficulty === "hard" ? "bg-black text-white" : "border"}`}
-        >
-          Hard
-        </button>
-      </div>
+      {/*zustandで実装している */}
 
       <div className="grid grid-cols-3 gap-2">
         {board.map((v, i) => (
