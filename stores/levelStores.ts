@@ -5,10 +5,10 @@ type Difficulty = {
 }
 
 type Action = {
-    changeDiffhculty:(by:string) => void;
+    changeDifficulty:(by:string) => void;
 };
 
-export const useLvelStore = create<Difficulty & Action>()((set) => ({
+export const useLevelStore = create<Difficulty & Action>()((set) => ({
     level:'easy',
-    changeDiffhculty:(by) => set((state) => ({level:by})),
+    changeDifficulty:(by) => set((state) => ({level:by})),
 }));
