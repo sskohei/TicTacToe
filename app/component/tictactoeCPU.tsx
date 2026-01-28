@@ -79,7 +79,7 @@ export default function TicTacToe() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-5">
-      <h1 className="text-3xl font-bold">三目並べ（難易度選択）</h1>
+      <h1 className="text-3xl font-bold">三目並べ（{difficulty}）</h1>
 
       {/* 難易度選択 */}
       {/*zustandで実装している */}

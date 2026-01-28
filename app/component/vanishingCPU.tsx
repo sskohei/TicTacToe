@@ -114,7 +114,7 @@ export default function Page() {
   // ===============================
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-5">
-      <h1 className="text-3xl font-bold">消える三目並べ</h1>
+      <h1 className="text-3xl font-bold">消える三目並べ({difficulty})</h1>
 
       {/* 難易度 */}
       
