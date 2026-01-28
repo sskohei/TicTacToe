@@ -6,13 +6,13 @@ export default function SelectLevelVanishing(){
             <h1 className="text-3xl font-bold">難易度を選択</h1>
             <div className="flex gap-2">
               <Button>
-                <a href="/">Easy</a>
+                Easy
               </Button>
               <Button>
-                <a href="/">Normal</a>
+                Normal
               </Button>
               <Button>
-                <a href="/">Hard</a>
+                Hard
               </Button>
             </div>
         </div>
