@@ -49,6 +49,25 @@
 
 minimaxという関数を再起させて盤面を考え、Oが勝つ → +10、Xが勝つ → -10、引き分け → 0というように点数をつけて次の一手を評価し、一番評価が高いマスに配置する。
 
+## 工夫点
+・zustandを使用して難易度の状態管理を行った（levelStores.ts）
+
+・CPUを難易度ごとに3種類作成した
+
+## 苦労した点
+・消える三目並べのhardモードのCPUでは通常の三目並べとは違いマスがすべて埋まることはなく、再起関数による実装だと無限に処理をしてしまった。
+
+### 解決
+・MAX_DEPTH=6とif (depth === 0) return 0によって無限ループしないようにした。再起するたびにdepth-1となるためdepth===0の時の処理があればdepthが0になったときにループを止めることができる。
+
+## 改善点
+・hardといっても今の処理では勝ち負けが付く盤面のみに点数をつけているため最強のCPUとしては不十分。他の評価方法なども導入してもっと強くできるようにしたい。
+
+・スマホでの表示は確認できていないのでスマホでも見やすいページにしたい。
+
+
+## 使い方
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
