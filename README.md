@@ -1,3 +1,20 @@
+## アプリの概要
+三目並べ（○×ゲーム）と消える三目並べを遊ぶことのできるアプリです。CPUと対戦する一人用モードと二人で1つの端末を使って対戦することのできる二人用モードを実装しています。
+
+## 使用技術
+・javascript
+・React
+・Next.js
+・zustand
+・ChatGPT（コード生成やデザインの相談）
+
+## 機能一覧
+・2種類のゲーム（通常の三目並べと消える三目並べ）
+・一人用モード（CPU対戦）
+・二人用モード（1つの端末で二人で対戦）
+
+## 画面イメージ
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
