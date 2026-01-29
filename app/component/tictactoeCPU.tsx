@@ -171,8 +171,8 @@ function minimax(
 ): number {
   const winner = calculateWinner(board);
 
-  if (winner === CPU) return 1;
-  if (winner === HUMAN) return -1;
+  if (winner === CPU) return 10;
+  if (winner === HUMAN) return -10;
   if (board.every(Boolean)) return 0;
 
   if (isMaximizing) {

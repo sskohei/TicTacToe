@@ -36,6 +36,19 @@
 ・ゲーム画面
 ![play](./images/sample04.png)
 
+## 一人用モードのCPU
+・easy
+
+空いているマスにランダムで配置。
+
+・normal
+
+勝てるマスががあればそこに配置し、置かれると負けるマスがあれば防ぐ。どちらの状況でもなければランダムなマスに配置する。
+
+・hard
+
+minimaxという関数を再起させて盤面を考え、Oが勝つ → +10、Xが勝つ → -10、引き分け → 0というように点数をつけて次の一手を評価し、一番評価が高いマスに配置する。
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
