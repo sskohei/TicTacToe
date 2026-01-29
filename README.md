@@ -11,13 +11,21 @@
 ## 機能一覧
 ・2種類のゲーム（通常の三目並べと消える三目並べ）
 ・一人用モード（CPU対戦）
+・難易度選択（easy,normal,hardの3種類から選択できる）
 ・二人用モード（1つの端末で二人で対戦）
 
 ## 画面イメージ
 ・ゲーム選択画面
 ![game](./images/sample01.png)
 
-・
+・モード選択画面（1人で遊ぶか2人で遊ぶか選択する）
+![mode](./images/sample02.png)
+
+・難易度選択画面（3種類あり1つ選択）
+![difficulty](./images/sample03.png)
+
+・ゲーム画面
+![play](./images/sample04.png)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
